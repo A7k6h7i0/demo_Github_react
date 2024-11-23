@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #6e7dff, #b1a7ff);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Calculator Container */
+.calculator {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Calculator Display */
+.display {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.display input {
+  width: 100%;
+  padding: 20px;
+  font-size: 32px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: right;
+}
+
+/* Buttons Layout */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.button {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.button:hover {
+  background-color: #e6e6e6;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.operator {
+  background-color: #6e7dff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.operator:hover {
+  background-color: #5a68d9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.clear {
+  background-color: #ff7f7f;
+  color: white;
+}
+
+.clear:hover {
+  background-color: #ff5c5c;
+}
+
+.equals {
+  background-color: #6e7dff;
+  color: white;
+  grid-column: span 2;
+}
+
+.equals:hover {
+  background-color: #5a68d9;
+}
+
+.zero {
+  grid-column: span 2;
+  background-color: #f2f2f2;
+}
+
+/* Button Style for Digits */
+button:focus {
+  outline: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 500px) {
+  .calculator {
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .display input {
+    font-size: 28px;
+  }
+
+  .button {
+    font-size: 20px;
+    padding: 18px;
   }
 }
